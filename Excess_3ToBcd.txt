@@ -1,0 +1,11 @@
+module Excess_3ToBcd(E,B);
+input [3:0] B;
+output [3:0] E;
+
+assign B[0] = ~E[0];
+assign B[2] = (E[1] ^ E[0]);
+assign B[2] = E[2] ^ ( E[1] | E[0]);
+assign B[3] = ~(E[2] ^ (E[0] & E[1]));
+
+endmodule;
+ 
